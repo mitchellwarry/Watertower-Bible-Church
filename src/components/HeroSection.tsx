@@ -2,7 +2,7 @@ function HeroSection() {
   return (
     <section className="relative w-full md:h-[50vh] flex items-center justify-center bg-trust-navy text-on-primary mb-28">
       <img
-        src="/home/cq5dam.web.1280.1280.jpeg"
+        src={`${import.meta.env.BASE_URL}home/cq5dam.web.1280.1280.jpeg`}
         alt="A wide, sweeping photograph of a welcoming church community gathering in a bright, modern sanctuary filled with natural light. The aesthetic is clean, warm, and corporate-chic, featuring soft lighting and a modern, minimalist interior that feels inviting and fresh. Groups of diverse people are interacting joyfully, reflecting a trustworthy and radiant community atmosphere. The overall mood is open, engaging, and professional."
         className="absolute inset-0 z-0 w-full h-full object-cover object-[center_65%]"
       />
