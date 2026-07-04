@@ -18,18 +18,18 @@ function SermonCard({ title, videoId, thumbnail }: Sermon) {
             allowFullScreen
             className="absolute inset-0 w-full h-full"
             src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-            title={title}
+            title={title || "Sermon video"}
           />
         ) : (
           <>
             <img
-              alt={title}
+              alt={title || "Sermon video thumbnail"}
               className="absolute inset-0 w-full h-full object-cover"
               src={thumbnail}
             />
             <div className="absolute inset-0 bg-black/30" />
             <button
-              aria-label={`Play ${title}`}
+              aria-label={title ? `Play ${title}` : "Play sermon"}
               className="absolute inset-0 flex items-center justify-center group"
               onClick={() => setPlaying(true)}
             >
