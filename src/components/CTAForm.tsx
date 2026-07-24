@@ -42,82 +42,96 @@ function CTAForm() {
             </div>
           </div>
         </div>
-        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 shadow-2xl">
+        <div className="bg-surface-container-lowest rounded-2xl p-8 shadow-2xl">
           <form action="#" className="space-y-6" method="POST">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
                 <label
-                  className="block font-label-md text-label-md text-surface-bright mb-2"
+                  className="block font-label-md text-label-md text-trust-navy mb-2"
                   htmlFor="first-name"
                 >
                   First Name
                 </label>
                 <input
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-surface-bright placeholder-surface-dim/50 focus:outline-none focus:ring-2 focus:ring-action-blue focus:border-transparent transition-all"
+                  className="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow"
                   id="first-name"
                   name="first-name"
-                  placeholder="Jane"
+                  placeholder="First Name"
                   type="text"
                 />
               </div>
               <div>
                 <label
-                  className="block font-label-md text-label-md text-surface-bright mb-2"
+                  className="block font-label-md text-label-md text-trust-navy mb-2"
                   htmlFor="last-name"
                 >
                   Last Name
                 </label>
                 <input
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-surface-bright placeholder-surface-dim/50 focus:outline-none focus:ring-2 focus:ring-action-blue focus:border-transparent transition-all"
+                  className="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow"
                   id="last-name"
                   name="last-name"
-                  placeholder="Doe"
+                  placeholder="Last Name"
                   type="text"
                 />
               </div>
             </div>
             <div>
               <label
-                className="block font-label-md text-label-md text-surface-bright mb-2"
+                className="block font-label-md text-label-md text-trust-navy mb-2"
                 htmlFor="email"
               >
                 Email Address
               </label>
               <input
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-surface-bright placeholder-surface-dim/50 focus:outline-none focus:ring-2 focus:ring-action-blue focus:border-transparent transition-all"
+                className="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow"
                 id="email"
                 name="email"
-                placeholder="jane@example.com"
+                placeholder="name@example.com.au"
                 type="email"
               />
             </div>
             <div>
               <label
-                className="block font-label-md text-label-md text-surface-bright mb-2"
+                className="block font-label-md text-label-md text-trust-navy mb-2"
                 htmlFor="date"
               >
                 When are you planning to visit?
               </label>
               <input
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-surface-bright focus:outline-none focus:ring-2 focus:ring-action-blue focus:border-transparent transition-all"
+                className="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-trust-navy focus:border-transparent transition-shadow"
                 id="date"
                 name="date"
-                style={{ colorScheme: "dark" }}
                 type="date"
               />
             </div>
             <div className="flex items-start gap-3 mt-4">
               <input
-                className="mt-1 w-5 h-5 rounded border-white/20 bg-white/10 text-action-blue focus:ring-action-blue focus:ring-offset-trust-navy"
+                className="mt-1 w-5 h-5 rounded border-outline-variant bg-surface accent-trust-navy focus:ring-trust-navy"
                 id="kids"
                 type="checkbox"
               />
-              <label className="text-sm text-surface-dim" htmlFor="kids">
+              <label className="text-sm text-on-surface-variant" htmlFor="kids">
                 I will be bringing children who might join the Kids Program.
               </label>
             </div>
+            <div>
+              <label
+                className="block font-label-md text-label-md text-trust-navy mb-2"
+                htmlFor="message"
+              >
+                Message
+              </label>
+              <textarea
+                className="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-trust-navy focus:border-transparent transition-shadow resize-none"
+                id="message"
+                name="message"
+                placeholder="Anything you'd like us to know before you visit?"
+                rows={4}
+              />
+            </div>
             <button
-              className="w-full bg-action-blue hover:bg-primary text-white font-label-md text-label-md py-4 rounded-lg transition-colors duration-200 mt-4 shadow-lg shadow-action-blue/20"
+              className="w-full bg-action-blue hover:bg-primary text-on-primary font-label-md text-label-md py-4 rounded-lg transition-colors duration-200 mt-4 shadow-lg shadow-action-blue/20"
               type="submit"
             >
               Send Message

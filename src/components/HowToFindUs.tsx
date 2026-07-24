@@ -37,7 +37,7 @@ function HowToFindUs() {
             <img
               alt="Watertower Bible Church Building"
               className="w-full h-full object-cover"
-              src="home/pexels-jm-sena-247861576-35824577.jpg"
+              src={`${import.meta.env.BASE_URL}home/pexels-jm-sena-247861576-35824577.jpg`}
             />
           </div>
         </div>

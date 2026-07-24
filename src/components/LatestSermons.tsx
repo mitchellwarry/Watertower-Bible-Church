@@ -24,27 +24,32 @@ const SERMONS: Sermon[] = VIDEO_IDS.map((videoId) => ({
 
 function LatestSermons() {
   return (
-    <section className="py-section-padding-mobile md:py-section-padding-desktop px-gutter max-w-container-max mx-auto">
-      <h2 className="font-headline-md text-headline-md text-trust-navy text-center mb-stack-lg">
-        Latest Sermons
-      </h2>
-      <Swiper
-        modules={[Navigation, Pagination]}
-        navigation
-        pagination={{ clickable: true }}
-        spaceBetween={32}
-        slidesPerView={1}
-        breakpoints={{
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-        }}
-      >
-        {SERMONS.map((sermon) => (
-          <SwiperSlide key={sermon.videoId}>
-            <SermonCard {...sermon} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+    <section className="bg-surface-container-low py-section-padding-mobile md:py-section-padding-desktop px-gutter">
+      <div className="max-w-container-max mx-auto">
+        <div className="flex flex-col items-center gap-3 mb-stack-lg">
+          <h2 className="font-headline-md text-headline-md text-trust-navy text-center">
+            Latest Sermons
+          </h2>
+          <div className="w-20 h-1 bg-action-blue rounded-full" />
+        </div>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          navigation
+          pagination={{ clickable: true }}
+          spaceBetween={32}
+          slidesPerView={1}
+          breakpoints={{
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+        >
+          {SERMONS.map((sermon) => (
+            <SwiperSlide key={sermon.videoId}>
+              <SermonCard {...sermon} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </section>
   );
 }

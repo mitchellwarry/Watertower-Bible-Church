@@ -1,44 +1,13 @@
 import { useState } from "react";
+import type { Faq } from "../data/faqContent";
 
-const faqs = [
-  {
-    question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-    answer:
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  },
-  {
-    question: "Ut enim ad minim veniam, quis nostrud exercitation?",
-    answer:
-      "Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-  },
-  {
-    question: "Duis aute irure dolor in reprehenderit in voluptate?",
-    answer:
-      "Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  },
-  {
-    question: "Excepteur sint occaecat cupidatat non proident?",
-    answer:
-      "Sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-  },
-  {
-    question: "Sed ut perspiciatis unde omnis iste natus error?",
-    answer:
-      "Sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
-  },
-  {
-    question: "Nemo enim ipsam voluptatem quia voluptas sit?",
-    answer:
-      "Aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.",
-  },
-  {
-    question: "Ut enim ad minima veniam, quis nostrum exercitationem?",
-    answer:
-      "Ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.",
-  },
-];
+interface FAQsProps {
+  faqs: Faq[];
+  heading?: string;
+  description?: string;
+}
 
-function FAQs() {
+function FAQs({ faqs, heading = "Frequently Asked Questions", description }: FAQsProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggle = (index: number) => {
@@ -50,9 +19,15 @@ function FAQs() {
       <div className="max-w-container-max mx-auto">
         <div className="flex flex-col items-center gap-4 text-center mb-stack-lg">
           <h2 className="font-headline-md text-headline-md text-trust-navy">
-            Frequently Asked Questions
+            {heading}
           </h2>
-          <div className="w-20 h-1 bg-action-blue rounded-full" />
+          {description ? (
+            <p className="font-body-md text-body-md text-on-surface-variant max-w-xl">
+              {description}
+            </p>
+          ) : (
+            <div className="w-20 h-1 bg-action-blue rounded-full" />
+          )}
         </div>
         <div className="max-w-3xl mx-auto flex flex-col">
           {faqs.map((faq, index) => {
